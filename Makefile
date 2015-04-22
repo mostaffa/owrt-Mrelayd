@@ -13,9 +13,9 @@ PKG_RELEASE=$(PKG_SOURCE_VERSION)
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE_URL:=git://github.com/DRTEK/mrelayd.git
+PKG_SOURCE_URL:=https://github.com/DRTEK/owrt-Mrelayd.git
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_VERSION:=V.1
+PKG_SOURCE_VERSION:=00000000000000000000000001
 
 PKG_MAINTAINER:=MK <mkoseoglu@drtek.com.tr>
 PKG_LICENSE:=GPL-2.0
@@ -27,7 +27,7 @@ define Package/mrelayd
   SECTION:=net
   CATEGORY:=Network
   SUBMENU:=Routing and Redirection
-  TITLE:=Multi Transparent routing / relay daemon
+  TITLE:=Multi Transparent routing / Multi relay daemon
   DEPENDS:=+libubox
 endef
 
@@ -41,4 +41,5 @@ define Package/mrelayd/install
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/relay.init $(1)/etc/init.d/relayd
 endef
+
 $(eval $(call BuildPackage,mrelayd))
