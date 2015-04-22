@@ -7,27 +7,27 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=relayd
-PKG_VERSION:=2015-03-13
+PKG_NAME:=mrelayd
+PKG_VERSION:=2015-04-22
 PKG_RELEASE=$(PKG_SOURCE_VERSION)
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE_URL:=git://nbd.name/relayd.git
+PKG_SOURCE_URL:=git://github.com/DRTEK/mrelayd.git
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_VERSION:=2970ff60bac6b70ecb682779d5c776dc559dc0b9
+PKG_SOURCE_VERSION:=V.1
 
-PKG_MAINTAINER:=Felix Fietkau <nbd@openwrt.org>
+PKG_MAINTAINER:=MK <mkoseoglu@drtek.com.tr>
 PKG_LICENSE:=GPL-2.0
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
-define Package/relayd
+define Package/mrelayd
   SECTION:=net
   CATEGORY:=Network
   SUBMENU:=Routing and Redirection
-  TITLE:=Transparent routing / relay daemon
+  TITLE:=Multi Transparent routing / relay daemon
   DEPENDS:=+libubox
 endef
 
