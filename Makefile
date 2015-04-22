@@ -41,5 +41,4 @@ define Package/mrelayd/install
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/relay.init $(1)/etc/init.d/relayd
 endef
-
 $(eval $(call BuildPackage,mrelayd))
