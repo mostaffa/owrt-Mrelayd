@@ -13,7 +13,7 @@ PKG_RELEASE=$(PKG_SOURCE_VERSION)
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE_URL:=git://github.com/DRTEK/mrelayd.git
+PKG_SOURCE_URL:=https://github.com/DRTEK/mrelayd.git
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_VERSION:=V.1
 
@@ -33,7 +33,7 @@ endef
 
 TARGET_CFLAGS += -I$(STAGING_DIR)/usr/include
 
-define Package/relayd/install
+define Package/mrelayd/install
 	$(INSTALL_DIR) $(1)/usr/sbin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/relayd $(1)/usr/sbin/relayd
 	$(INSTALL_DIR) $(1)/etc/hotplug.d/iface
@@ -42,4 +42,4 @@ define Package/relayd/install
 	$(INSTALL_BIN) ./files/relay.init $(1)/etc/init.d/relayd
 endef
 
-$(eval $(call BuildPackage,relayd))
+$(eval $(call BuildPackage,mrelayd))
