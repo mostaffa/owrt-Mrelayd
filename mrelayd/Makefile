@@ -7,7 +7,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=mrelayd
+PKG_NAME:=relayd
 PKG_VERSION:=2015-04-22
 PKG_RELEASE=$(PKG_SOURCE_VERSION)
 
@@ -23,7 +23,7 @@ PKG_LICENSE:=GPL-2.0
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
-define Package/mrelayd
+define Package/relayd
   SECTION:=net
   CATEGORY:=Network
   SUBMENU:=Routing and Redirection
@@ -33,13 +33,13 @@ endef
 
 TARGET_CFLAGS += -I$(STAGING_DIR)/usr/include
 
-define Package/mrelayd/install
+define Package/relayd/install
 	$(INSTALL_DIR) $(1)/usr/sbin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mrelayd $(1)/usr/sbin/mrelayd
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/relayd $(1)/usr/sbin/relayd
 	$(INSTALL_DIR) $(1)/etc/hotplug.d/iface
 	$(INSTALL_DATA) ./files/relay.hotplug $(1)/etc/hotplug.d/iface/30-relay
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/relay.init $(1)/etc/init.d/relayd
 endef
 
-$(eval $(call BuildPackage,mrelayd))
+$(eval $(call BuildPackage,relayd))
